@@ -56,3 +56,56 @@ INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'H
 INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Odyssey', '2016', '19');
 INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Murano', '2019', '20');
 ```
+
+
+
+
+EJERCICIOS
+
+```SQL
+Paso 3: Realizar las siguientes 10 consultas de datos
+
+
+   Seleccionar todos los propietarios (SELECT * FROM propietarios);
+
+
+   Listar todos los vehículos. (SELECT * FROM vehiculos);
+
+
+   Seleccionar solo los nombres y apellidos de los propietarios. (SELECT nombre,apellido FROM propietarios);
+
+
+   Listar todas las marcas y modelos de los vehículos.
+(SELECT marcas,modelos FROM vehiculos);
+
+
+   Seleccionar solo los propietarios con apellido "Perez".
+   Listar todos los vehículos con año 2019.
+(SELECT * FROM vehiculos WHERE anio=”2019”);
+
+
+   Seleccionar propietarios que tienen vehículos de la marca "Toyota".
+(SELECT * FROM propietarios WHERE marca=”Toyota”);
+
+
+   Listar vehículos con marca "Ford" y modelo "Fiesta".
+(SELECT * FROM vehiculos WHERE marca=”Ford” & modelo=”Fiesta”);
+
+
+   Seleccionar propietarios con DNI "12345678A".
+(SELECT * FROM propietarios WHERE DNI=”12345678A”);
+
+
+
+
+   Listar vehículos que pertenecen al propietario con ID 5.
+(SELECT * FROM vehiculos WHERE id=”5”);
+
+
+
+
+
+
+   Actualizar el nombre de un propietario con DNI "12345678A".
+(UPDATE propietario set nombre=”Pepita” WHERE dni=”12345678A” );
+```
