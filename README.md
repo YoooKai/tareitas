@@ -120,7 +120,7 @@ UPDATE vehiculos set modelo="Micra" WHERE modelo="Nissan"
 
 
    Actualizar el apellido de un propietario con ID 7 a "Gomez".
-UPDATE propietarios set apellido="Gomez" WHERE id="id"
+UPDATE propietarios set apellido="Gomez" WHERE id="7"
 
 
    Modificar la marca de un vehículo con modelo "Fiesta" a "Renault".
