@@ -109,11 +109,27 @@ Paso 3: Realizar las siguientes 10 consultas de datos
    Actualizar el nombre de un propietario con DNI "12345678A".
 (UPDATE propietario set nombre=”Pepita” WHERE dni=”12345678A” );
 
+
+
    Modificar el año de un vehículo con ID 3 a 2022.
 UPDATE vehiculo set anio=”2022” WHERE id=”3”
 
 
    Cambiar el modelo de todos los vehículos Nissan a "Micra".
 UPDATE vehiculo set modelo=”Micra” WHERE modelo=”Nissan”
+
+
+   Actualizar el apellido de un propietario con ID 7 a "Gomez".
+UPDATE propietario set apellido=”Gomez” WHERE id=”id”
+
+
+   Modificar la marca de un vehículo con modelo "Fiesta" a "Renault".
+UPDATE vehiculo set modelo=”Renault” WHERE modelo=”Fiesta”
+
+
+
+
+
+
 
 ```
