@@ -112,19 +112,19 @@ Paso 3: Realizar las siguientes 10 consultas de datos
 
 
    Modificar el año de un vehículo con ID 3 a 2022.
-UPDATE vehiculo set anio="2022" WHERE id="3"
+UPDATE vehiculos set anio="2022" WHERE id="3"
 
 
    Cambiar el modelo de todos los vehículos Nissan a "Micra".
-UPDATE vehiculo set modelo="Micra" WHERE modelo="Nissan"
+UPDATE vehiculos set modelo="Micra" WHERE modelo="Nissan"
 
 
    Actualizar el apellido de un propietario con ID 7 a "Gomez".
-UPDATE propietario set apellido="Gomez" WHERE id="id"
+UPDATE propietarios set apellido="Gomez" WHERE id="id"
 
 
    Modificar la marca de un vehículo con modelo "Fiesta" a "Renault".
-UPDATE vehiculo set modelo="Renault" WHERE modelo="Fiesta"
+UPDATE vehiculos set modelo="Renault" WHERE modelo="Fiesta"
 
 
 
@@ -316,6 +316,34 @@ sqlite> select * from propietarios
 │ 19 │ Sergio   │ Mendoza   │ 17171717S │
 │ 20 │ Patricia │ Navarro   │ 18181818T │
 └────┴──────────┴───────────┴───────────┘
+sqlite> UPDATE vehiculos set anio="2022" WHERE id="3";
+sqlite> select * from vehiculos
+   ...> ;
+┌────┬────────────┬────────────┬──────┬────────────────┐
+│ id │   marca    │   modelo   │ anio │ id_propietario │
+├────┼────────────┼────────────┼──────┼────────────────┤
+│ 1  │ Ford       │ Fiesta     │ 2019 │ 1              │
+│ 2  │ Toyota     │ Corolla    │ 2018 │ 2              │
+│ 3  │ Nissan     │ Sentra     │ 2022 │ 3              │
+│ 4  │ Chevrolet  │ Spark      │ 2017 │ 4              │
+│ 5  │ Honda      │ Civic      │ 2016 │ 5              │
+│ 6  │ Ford       │ Mustang    │ 2021 │ 6              │
+│ 7  │ Toyota     │ Golf       │ 2020 │ 7              │
+│ 8  │ Volkswagen │ RAV4       │ 2019 │ 8              │
+│ 9  │ Honda      │ CR-V       │ 2018 │ 9              │
+│ 10 │ Nissan     │ Altima     │ 2017 │ 10             │
+│ 11 │ Chevrolet  │ Malibu     │ 2019 │ 11             │
+│ 12 │ Toyota     │ Camry      │ 2020 │ 12             │
+│ 13 │ Honda      │ Accord     │ 2018 │ 13             │
+│ 14 │ Ford       │ Explorer   │ 2021 │ 14             │
+│ 15 │ Nissan     │ Rogue      │ 2017 │ 15             │
+│ 16 │ Volkswagen │ Jetta      │ 2019 │ 16             │
+│ 17 │ Chevrolet  │ Equinox    │ 2018 │ 17             │
+│ 18 │ Toyota     │ Highlander │ 2020 │ 18             │
+│ 19 │ Honda      │ Odyssey    │ 2016 │ 19             │
+│ 20 │ Nissan     │ Murano     │ 2019 │ 20             │
+└────┴────────────┴────────────┴──────┴────────────────┘
+
 
 ```
 
