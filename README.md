@@ -35,24 +35,24 @@ anio INTEGER NOT NULL,
 id_propietario INTEGER references propietario(id)
 );
 
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Ford', 'Fiesta', '2019', '1');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Corolla', '2018', '2');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Sentra', '2020', '3');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Chevrolet', 'Spark', '2017', '4');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Civic', '2016', '5');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Ford', 'Mustang', '2021', '6');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Golf', '2020', '7');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Volkswagen', 'RAV4', '2019', '8');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Honda', 'CR-V', '2018', '9');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Altima', '2017', '10');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Chevrolet', 'Malibu', '2019', '11');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Camry', '2020', '12');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Accord', '2018', '13');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Ford', 'Explorer', '2021', '14');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Rogue', '2017', '15');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Volkswagen', 'Jetta', '2019', '16');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Chevrolet', 'Equinox', '2018', '17');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Highlander', '2020', '18');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Odyssey', '2016', '19');
-INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Murano', '2019', '20');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Ford', 'Fiesta', '2019', '1');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Corolla', '2018', '2');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Sentra', '2020', '3');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Chevrolet', 'Spark', '2017', '4');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Civic', '2016', '5');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Ford', 'Mustang', '2021', '6');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Golf', '2020', '7');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Volkswagen', 'RAV4', '2019', '8');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Honda', 'CR-V', '2018', '9');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Altima', '2017', '10');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Chevrolet', 'Malibu', '2019', '11');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Camry', '2020', '12');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Accord', '2018', '13');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Ford', 'Explorer', '2021', '14');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Rogue', '2017', '15');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Volkswagen', 'Jetta', '2019', '16');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Chevrolet', 'Equinox', '2018', '17');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Highlander', '2020', '18');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Odyssey', '2016', '19');
+INSERT INTO vehiculos (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Murano', '2019', '20');
 ```
