@@ -94,7 +94,15 @@ SELECT * FROM Propietarios WHERE apellido="Perez";
 
 
    Seleccionar propietarios que tienen vehículos de la marca "Toyota".
-(SELECT * FROM propietarios WHERE marca="Toyota");
+SELECT * FROM Propietarios as p,Vehiculos as v WHERE v.id_propietario = p.id and v.marca="Toyota";
++----+--------+----------+-----------+----+--------+------------+------+----------------+
+| id | nombre | apellido |    dni    | id | marca  |   modelo   | anio | id_propietario |
++----+--------+----------+-----------+----+--------+------------+------+----------------+
+| 2  | Maria  | Lopez    | 87654321B | 2  | Toyota | Corolla    | 2018 | 2              |
+| 7  | Diego  | Sanchez  | 55555555G | 7  | Toyota | Golf       | 2020 | 7              |
+| 12 | Marta  | Diaz     | 10101010L | 12 | Toyota | Camry      | 2020 | 12             |
+| 18 | Clara  | Soto     | 16161616R | 18 | Toyota | Highlander | 2020 | 18             |
++----+--------+----------+-----------+----+--------+------------+------+----------------+
 
 
    Listar vehículos con marca "Ford" y modelo "Fiesta".
