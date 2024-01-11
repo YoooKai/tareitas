@@ -4,7 +4,7 @@ CREATE TABLE propietarios
 (id INTEGER PRIMARY KEY AUTOINCREMENT,
 nombre TEXT NOT NULL,
 apellido TEXT NOT NULL,
-dni TEXT UNICODE
+dni TEXT UNIQUE
 );
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Juan', 'Perez', '12345678A' );
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Maria', 'Lopez', '87654321B' );
