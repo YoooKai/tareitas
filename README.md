@@ -204,6 +204,14 @@ sqlite> select * from vehiculos
 └────┴────────────┴────────────┴──────┴────────────────┘
 
 
+sqlite> SELECT propietarios WHERE apellido="Perez"
+   ...> ;
++----+--------+----------+-----------+
+| id | nombre | apellido |    dni    |
++----+--------+----------+-----------+
+| 1  | Juan   | Perez    | 12345678A |
++----+--------+----------+-----------+
+
 sqlite> SELECT nombre, apellido FROM propietarios
    ...> ;
 ┌──────────┬───────────┐
