@@ -261,6 +261,15 @@ sqlite> SELECT * FROM vehiculos WHERE anio="2019"
 │ 20 │ Nissan     │ Murano │ 2019 │ 20             │
 └────┴────────────┴────────┴──────┴────────────────┘
 
+
+sqlite> SELECT * FROM vehiculos WHERE marca="Ford" and modelo="Fiesta"
+   ...> ;
+┌────┬───────┬────────┬──────┬────────────────┐
+│ id │ marca │ modelo │ anio │ id_propietario │
+├────┼───────┼────────┼──────┼────────────────┤
+│ 1  │ Ford  │ Fiesta │ 2019 │ 1              │
+└────┴───────┴────────┴──────┴────────────────┘
+
 ```
 
 
