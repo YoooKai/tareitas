@@ -76,7 +76,7 @@ Paso 3: Realizar las siguientes 10 consultas de datos
 
 
    Listar todas las marcas y modelos de los vehículos.
-(SELECT marcas,modelos FROM vehiculos);
+(SELECT marca,modelo FROM vehiculos);
 
 
    Seleccionar solo los propietarios con apellido "Perez".
@@ -222,6 +222,44 @@ sqlite> SELECT nombre, apellido FROM propietarios
 │ Patricia │ Navarro   │
 └──────────┴───────────┘
 
+sqlite> SELECT marca,modelo FROM vehiculos
+   ...> ;
+┌────────────┬────────────┐
+│   marca    │   modelo   │
+├────────────┼────────────┤
+│ Ford       │ Fiesta     │
+│ Toyota     │ Corolla    │
+│ Nissan     │ Sentra     │
+│ Chevrolet  │ Spark      │
+│ Honda      │ Civic      │
+│ Ford       │ Mustang    │
+│ Toyota     │ Golf       │
+│ Volkswagen │ RAV4       │
+│ Honda      │ CR-V       │
+│ Nissan     │ Altima     │
+│ Chevrolet  │ Malibu     │
+│ Toyota     │ Camry      │
+│ Honda      │ Accord     │
+│ Ford       │ Explorer   │
+│ Nissan     │ Rogue      │
+│ Volkswagen │ Jetta      │
+│ Chevrolet  │ Equinox    │
+│ Toyota     │ Highlander │
+│ Honda      │ Odyssey    │
+│ Nissan     │ Murano     │
+└────────────┴────────────┘
+
+sqlite> SELECT * FROM vehiculos WHERE anio="2019"
+   ...> ;
+┌────┬────────────┬────────┬──────┬────────────────┐
+│ id │   marca    │ modelo │ anio │ id_propietario │
+├────┼────────────┼────────┼──────┼────────────────┤
+│ 1  │ Ford       │ Fiesta │ 2019 │ 1              │
+│ 8  │ Volkswagen │ RAV4   │ 2019 │ 8              │
+│ 11 │ Chevrolet  │ Malibu │ 2019 │ 11             │
+│ 16 │ Volkswagen │ Jetta  │ 2019 │ 16             │
+│ 20 │ Nissan     │ Murano │ 2019 │ 20             │
+└────┴────────────┴────────┴──────┴────────────────┘
 
 ```
 
