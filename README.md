@@ -1,4 +1,5 @@
-'''sql
+```sql
+
 CREATE TABLE propietarios
 (id INTEGER PRIMARY KEY AUTOINCREMENT,
 nombre TEXT NOT NULL,
@@ -54,4 +55,4 @@ INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Chevrole
 INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Toyota', 'Highlander', '2020', '18');
 INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Honda', 'Odyssey', '2016', '19');
 INSERT INTO propietarios (marca, modelo, anio, id_propietario) VALUES ('Nissan', 'Murano', '2019', '20');
-'''
+```
