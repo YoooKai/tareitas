@@ -288,9 +288,6 @@ sqlite> SELECT * FROM vehiculos WHERE id="5"
 └────┴───────┴────────┴──────┴────────────────┘
 
 
-sqlite> UPDATE propietario set nombre="Roberto" WHERE dni="12345678A"
-   ...> ;
-Error: in prepare, no such table: propietario (1)
 sqlite> UPDATE propietarios set nombre="Roberto" WHERE dni="12345678A"
    ...> ;
 sqlite> select * from propietarios
