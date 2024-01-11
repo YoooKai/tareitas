@@ -89,7 +89,7 @@ Paso 3: Realizar las siguientes 10 consultas de datos
 
 
    Listar vehículos con marca "Ford" y modelo "Fiesta".
-(SELECT * FROM vehiculos WHERE marca="Ford" & modelo="Fiesta");
+(SELECT * FROM vehiculos WHERE marca="Ford" and modelo="Fiesta");
 
 
    Seleccionar propietarios con DNI "12345678A".
