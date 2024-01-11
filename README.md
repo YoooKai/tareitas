@@ -107,7 +107,7 @@ Paso 3: Realizar las siguientes 10 consultas de datos
 
 
    Actualizar el nombre de un propietario con DNI "12345678A".
-(UPDATE propietario set nombre="Pepita" WHERE dni="12345678A" );
+(UPDATE propietarios set nombre="Pepita" WHERE dni="12345678A" );
 
 
 
@@ -269,6 +269,56 @@ sqlite> SELECT * FROM vehiculos WHERE marca="Ford" and modelo="Fiesta"
 ├────┼───────┼────────┼──────┼────────────────┤
 │ 1  │ Ford  │ Fiesta │ 2019 │ 1              │
 └────┴───────┴────────┴──────┴────────────────┘
+
+sqlite> SELECT * FROM propietarios WHERE DNI="12345678A"
+   ...> ;
+┌────┬────────┬──────────┬───────────┐
+│ id │ nombre │ apellido │    dni    │
+├────┼────────┼──────────┼───────────┤
+│ 1  │ Juan   │ Perez    │ 12345678A │
+└────┴────────┴──────────┴───────────┘
+
+
+sqlite> SELECT * FROM vehiculos WHERE id="5"
+   ...> ;
+┌────┬───────┬────────┬──────┬────────────────┐
+│ id │ marca │ modelo │ anio │ id_propietario │
+├────┼───────┼────────┼──────┼────────────────┤
+│ 5  │ Honda │ Civic  │ 2016 │ 5              │
+└────┴───────┴────────┴──────┴────────────────┘
+
+
+sqlite> UPDATE propietario set nombre="Roberto" WHERE dni="12345678A"
+   ...> ;
+Error: in prepare, no such table: propietario (1)
+sqlite> UPDATE propietarios set nombre="Roberto" WHERE dni="12345678A"
+   ...> ;
+sqlite> select * from propietarios
+   ...> ;
+┌────┬──────────┬───────────┬───────────┐
+│ id │  nombre  │ apellido  │    dni    │
+├────┼──────────┼───────────┼───────────┤
+│ 1  │ Roberto  │ Perez     │ 12345678A │
+│ 2  │ Maria    │ Lopez     │ 87654321B │
+│ 3  │ Carlos   │ Ruiz      │ 11111111C │
+│ 4  │ Laura    │ Gomez     │ 22222222D │
+│ 5  │ Pedro    │ Martinez  │ 33333333E │
+│ 6  │ Ana      │ Fernandez │ 44444444F │
+│ 7  │ Diego    │ Sanchez   │ 55555555G │
+│ 8  │ Sofia    │ Torres    │ 66666666H │
+│ 9  │ Javier   │ Leon      │ 77777777I │
+│ 10 │ Lucia    │ Castillo  │ 88888888J │
+│ 11 │ Luis     │ Gonzalez  │ 99999999K │
+│ 12 │ Marta    │ Diaz      │ 10101010L │
+│ 13 │ Victor   │ Vargas    │ 11111112M │
+│ 14 │ Elena    │ Castro    │ 12121212N │
+│ 15 │ Roberto  │ Blanco    │ 13131313O │
+│ 16 │ Natalia  │ Paredes   │ 14141414P │
+│ 17 │ Fernando │ Herrera   │ 15151515Q │
+│ 18 │ Clara    │ Soto      │ 16161616R │
+│ 19 │ Sergio   │ Mendoza   │ 17171717S │
+│ 20 │ Patricia │ Navarro   │ 18181818T │
+└────┴──────────┴───────────┴───────────┘
 
 ```
 
