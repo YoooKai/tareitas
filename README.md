@@ -11,10 +11,10 @@ INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Maria', 'Lopez', '8765
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Carlos', 'Ruiz', '11111111C' );
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Laura', 'Gomez', '22222222D' );
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Pedro', 'Martinez', '33333333E' );
-INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Ana, 'Fernandez', '44444444F' );
-INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Diego, 'Sanchez', '55555555G' );
-INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Sofia, 'Torres', '66666666H' );
-INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Javier, 'Leon', '77777777I' );
+INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Ana', 'Fernandez', '44444444F' );
+INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Diego', 'Sanchez', '55555555G' );
+INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Sofia', 'Torres', '66666666H' );
+INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Javier', 'Leon', '77777777I' );
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Lucia', 'Castillo', '88888888J' );
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Luis', 'Gonzalez', '99999999K' );
 INSERT INTO propietarios (nombre, apellido, dni) VALUES ('Marta', 'Diaz', '10101010L' );
