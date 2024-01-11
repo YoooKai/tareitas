@@ -80,6 +80,15 @@ Paso 3: Realizar las siguientes 10 consultas de datos
 
 
    Seleccionar solo los propietarios con apellido "Perez".
+SELECT Propietarios WHERE apellido="Perez";
++----+--------+----------+-----------+
+| id | nombre | apellido |    dni    |
++----+--------+----------+-----------+
+| 1  | Juan   | Perez    | 12345678A |
++----+--------+----------+-----------+
+SELECT * FROM Propietarios WHERE apellido="Perez";
+
+
    Listar todos los vehículos con año 2019.
 (SELECT * FROM vehiculos WHERE anio="2019");
 
