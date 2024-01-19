@@ -1,3 +1,238 @@
+1. Mostrar todos los productos de la categoría "Bebidas".
+
+```sql
+sqlite> select * from productos where categoria like 'Bebidas';
+   ...> ;
++----+------------------+-----------+--------+
+| id |      nombre      | categoria | precio |
++----+------------------+-----------+--------+
+| 16 | Café             | Bebidas   | 5.0    |
+| 19 | Botellas de Agua | Bebidas   | 1.0    |
+| 20 | Cerveza          | Bebidas   | 3.8    |
++----+------------------+-----------+--------+
+
+```
+
+2. Listar los productos ordenados por precio de forma descendente.
+```sql
+SELECT * FROM productos ORDER BY precio desc;
+```
++----+--------------------+-----------+--------+
+| id |       nombre       | categoria | precio |
++----+--------------------+-----------+--------+
+| 5  | Pollo              | Carnes    | 5.5    |
+| 16 | Café               | Bebidas   | 5.0    |
+| 15 | Aceite de Oliva    | Cocina    | 4.5    |
+| 9  | Queso              | Lácteos   | 4.0    |
+| 20 | Cerveza            | Bebidas   | 3.8    |
+| 10 | Cereal             | Desayuno  | 3.5    |
+| 4  | Manzanas           | Frutas    | 3.0    |
+| 13 | Detergente         | Limpieza  | 2.8    |
+| 1  | Arroz              | Alimentos | 2.5    |
+| 17 | Sopa enlatada      | Conservas | 2.3    |
+| 8  | Tomates            | Verduras  | 2.2    |
+| 7  | Yogurt             | Lácteos   | 2.0    |
+| 12 | Cepillo de Dientes | Higiene   | 2.0    |
+| 2  | Leche              | Lácteos   | 1.8    |
+| 14 | Galletas           | Snacks    | 1.7    |
+| 11 | Papel Higiénico    | Hogar     | 1.5    |
+| 3  | Pan                | Panadería | 1.2    |
+| 18 | Jabón de Baño      | Higiene   | 1.2    |
+| 6  | Huevos             | Lácteos   | 1.0    |
+| 19 | Botellas de Agua   | Bebidas   | 1.0    |
++----+--------------------+-----------+--------+
+
+3. Calcular el precio total de todos los productos en la tabla "productos".
+SELECT SUM(precio) AS suma_precio FROM productos;
+
+sqlite> SELECT SUM(precio) AS suma_precio FROM productos;
++-------------+
+| suma_precio |
++-------------+
+| 52.5        |
++-------------+
+
+4. Encontrar los productos con un nombre que contenga la letra 'a'.
+
+SELECT * FROM productos WHERE nombre LIKE '%a%';
+
++----+------------------+-----------+--------+
+| id |      nombre      | categoria | precio |
++----+------------------+-----------+--------+
+| 1  | Arroz            | Alimentos | 2.5    |
+| 3  | Pan              | Panadería | 1.2    |
+| 4  | Manzanas         | Frutas    | 3.0    |
+| 8  | Tomates          | Verduras  | 2.2    |
+| 10 | Cereal           | Desayuno  | 3.5    |
+| 11 | Papel Higiénico  | Hogar     | 1.5    |
+| 14 | Galletas         | Snacks    | 1.7    |
+| 15 | Aceite de Oliva  | Cocina    | 4.5    |
+| 16 | Café             | Bebidas   | 5.0    |
+| 17 | Sopa enlatada    | Conservas | 2.3    |
+| 18 | Jabón de Baño    | Higiene   | 1.2    |
+| 19 | Botellas de Agua | Bebidas   | 1.0    |
+| 20 | Cerveza          | Bebidas   | 3.8    |
++----+------------------+-----------+--------+
+
+5. Obtener la cantidad total de productos vendidos en todas las fechas.
+
+SELECT SUM(cantidad) suma_producto FROM ventas;
+sqlite> SELECT SUM(cantidad) suma_producto FROM ventas;
++---------------+
+| suma_producto |
++---------------+
+| 43            |
++---------------+
+
+6. Encontrar el producto más caro en cada categoría.
+
+sqlite> SELECT categoria, MAX(precio) from productos group by categoria;
++-----------+-------------+
+| categoria | MAX(precio) |
++-----------+-------------+
+| Alimentos | 2.5         |
+| Bebidas   | 5.0         |
+| Carnes    | 5.5         |
+| Cocina    | 4.5         |
+| Conservas | 2.3         |
+| Desayuno  | 3.5         |
+| Frutas    | 3.0         |
+| Higiene   | 2.0         |
+| Hogar     | 1.5         |
+| Limpieza  | 2.8         |
+| Lácteos   | 4.0         |
+| Panadería | 1.2         |
+| Snacks    | 1.7         |
+| Verduras  | 2.2         |
++-----------+-------------+
+
+7. Listar los productos que no han sido vendidos.
+
+sqlite> SELECT * FROM productos where id not in (SELECT p.id from productos as p, ventas as v where p.id = v.id_producto);
++----+--------------------+-----------+--------+
+| id |       nombre       | categoria | precio |
++----+--------------------+-----------+--------+
+| 3  | Pan                | Panadería | 1.2    |
+| 7  | Yogurt             | Lácteos   | 2.0    |
+| 9  | Queso              | Lácteos   | 4.0    |
+| 11 | Papel Higiénico    | Hogar     | 1.5    |
+| 12 | Cepillo de Dientes | Higiene   | 2.0    |
+| 13 | Detergente         | Limpieza  | 2.8    |
+| 15 | Aceite de Oliva    | Cocina    | 4.5    |
+| 17 | Sopa enlatada      | Conservas | 2.3    |
+| 19 | Botellas de Agua   | Bebidas   | 1.0    |
+| 20 | Cerveza            | Bebidas   | 3.8    |
++----+--------------------+-----------+--------+
+
+8. Calcular el precio promedio de los productos en la categoría "Snacks".
+sqlite> SELECT categoria, AVG(precio) from productos where categoria like 'Snacks';
++-----------+-------------+
+| categoria | AVG(precio) |
++-----------+-------------+
+| Snacks    | 1.7         |
++-----------+-------------+
+
+9. Encontrar los productos que han sido vendidos más de 5 veces.
+
+sqlite> SELECT v.cantidad, p.nombre FROM productos as p, ventas as v where p.id = v.id_producto and v.cantidad > 5;
++----------+---------------+
+| cantidad |    nombre     |
++----------+---------------+
+| 10       | Huevos        |
+| 7        | Galletas      |
+| 6        | Jabón de Baño |
++----------+---------------+
+
+
+10. Mostrar la fecha y la cantidad de ventas para cada producto.
+
+SELECT fecha, cantidad from productos 
+
+11. Encontrar los productos que tienen un precio menor o igual a 2.
+
+sqlite> SELECT * from productos where precio <= 2;
++----+--------------------+-----------+--------+
+| id |       nombre       | categoria | precio |
++----+--------------------+-----------+--------+
+| 2  | Leche              | Lácteos   | 1.8    |
+| 3  | Pan                | Panadería | 1.2    |
+| 6  | Huevos             | Lácteos   | 1.0    |
+| 7  | Yogurt             | Lácteos   | 2.0    |
+| 11 | Papel Higiénico    | Hogar     | 1.5    |
+| 12 | Cepillo de Dientes | Higiene   | 2.0    |
+| 14 | Galletas           | Snacks    | 1.7    |
+| 18 | Jabón de Baño      | Higiene   | 1.2    |
+| 19 | Botellas de Agua   | Bebidas   | 1.0    |
++----+--------------------+-----------+--------+
+
+12. Calcular la cantidad total de ventas para cada fecha.
+
+sqlite> SELECT fecha,SUM(cantidad) FROM  ventas  group by fecha;
++------------+---------------+
+|   fecha    | SUM(cantidad) |
++------------+---------------+
+| 2024-01-17 | 11            |
+| 2024-01-18 | 16            |
+| 2024-01-19 | 10            |
+| 2024-01-20 | 6             |
++------------+---------------+
+
+
+13. Listar los productos cuyo nombre comienza con la letra 'P'.
+
+SELECT * FROM productos WHERE nombre LIKE 'P%';
+
++----+-----------------+-----------+--------+
+| id |     nombre      | categoria | precio |
++----+-----------------+-----------+--------+
+| 3  | Pan             | Panadería | 1.2    |
+| 5  | Pollo           | Carnes    | 5.5    |
+| 11 | Papel Higiénico | Hogar     | 1.5    |
++----+-----------------+-----------+--------+
+
+14. Obtener el producto más vendido en términos de cantidad.
+
+sqlite> select p.nombre,MAX(v.cantidad) FROM ventas as v, productos as p;
++--------+-----------------+
+| nombre | MAX(v.cantidad) |
++--------+-----------------+
+| Arroz  | 10              |
++--------+-----------------+
+
+
+15. Mostrar los productos que fueron vendidos en la fecha '2024-01-18'.
+
+SELECT p.id, p.nombre, v.fecha FROM ventas as v, productos as p where v.fecha like '2024-01-18' and p.id = v.id_producto;
+
++----+---------+------------+
+| id | nombre  |   fecha    |
++----+---------+------------+
+| 6  | Huevos  | 2024-01-18 |
+| 8  | Tomates | 2024-01-18 |
+| 10 | Cereal  | 2024-01-18 |
++----+---------+------------+
+
+16. Calcular el total de ventas para cada producto.
+SELECT 
+
+Encontrar los productos con un precio entre 3 y 4.
+Listar los productos y sus categorías ordenados alfabéticamente por categoría.
+Calcular el precio total de los productos vendidos en la fecha '2024-01-19'.
+Mostrar los productos que no pertenecen a la categoría "Higiene".
+Encontrar la cantidad total de productos en cada categoría.
+Listar los productos que tienen un precio igual a la media de precios.
+Calcular el precio total de los productos vendidos en cada fecha.
+Mostrar los productos con un nombre que termina con la letra 'o'.
+Encontrar los productos que han sido vendidos en más de una fecha.
+Listar los productos cuya categoría comienza con la letra 'L'.
+Calcular el total de ventas para cada producto en la fecha '2024-01-17'.
+Mostrar los productos cuyo nombre tiene al menos 5 caracteres.
+Encontrar los productos que tienen un precio superior al precio máximo en la tabla "productos".
+
+
+
+
+
 ```sql
 
 CREATE TABLE propietarios
